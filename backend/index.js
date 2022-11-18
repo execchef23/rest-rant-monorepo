@@ -13,6 +13,10 @@ app.use(cookieSession({
     sameSite: 'strict',
     maxAge: 24 * 60 * 60 * 1000 // 24hours
 }))
+app.use(cors({
+    origin: 'http://localhost:5001',
+    credentials: true
+}))
 app.use(cors())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
